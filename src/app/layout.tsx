@@ -11,6 +11,16 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <head>
+        <title>LS Buy</title>
+        <meta title="description" content="Buy anything online" />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="32x32"
+          href="shopping_cart.png"
+        />
+      </head>
       <body>
         <CacheProvider>
           <ChakraProvider theme={defaultTheme}>{children}</ChakraProvider>
