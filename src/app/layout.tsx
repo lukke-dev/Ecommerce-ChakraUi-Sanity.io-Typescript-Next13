@@ -13,9 +13,7 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <CacheProvider>
-          <ChakraProvider theme={defaultTheme}>
-            {children}
-          </ChakraProvider>
+          <ChakraProvider theme={defaultTheme}>{children}</ChakraProvider>
         </CacheProvider>
       </body>
     </html>
