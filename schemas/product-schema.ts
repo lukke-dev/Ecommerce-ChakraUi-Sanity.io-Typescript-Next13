@@ -1,4 +1,6 @@
-export const ProductSchema = {
+import { SchemaTypeDefinition } from 'sanity'
+
+export const ProductSchema: SchemaTypeDefinition = {
   name: 'product',
   title: 'Product',
   type: 'document',
@@ -16,6 +18,7 @@ export const ProductSchema = {
       options: {
         source: 'name',
         maxLength: 100,
+        unique: true,
       },
     },
     {

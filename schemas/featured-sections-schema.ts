@@ -1,4 +1,6 @@
-export const FeaturedSectionsSchema = {
+import { SchemaTypeDefinition } from 'sanity'
+
+export const FeaturedSectionsSchema: SchemaTypeDefinition = {
   name: 'featuredProductsAndCategories',
   title: 'Featured',
   type: 'document',

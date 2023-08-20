@@ -1,4 +1,6 @@
-export const GalleryImageSchema = {
+import { SchemaTypeDefinition } from 'sanity'
+
+export const GalleryImageSchema: SchemaTypeDefinition = {
   name: 'galleryImage',
   title: 'Gallery Image',
   type: 'image',

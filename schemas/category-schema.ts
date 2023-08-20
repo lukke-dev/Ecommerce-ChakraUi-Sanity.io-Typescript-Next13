@@ -1,4 +1,6 @@
-export const CategorySchema = {
+import { SchemaTypeDefinition } from 'sanity'
+
+export const CategorySchema: SchemaTypeDefinition = {
   name: 'category',
   title: 'Category',
   type: 'document',
@@ -15,6 +17,7 @@ export const CategorySchema = {
       options: {
         source: 'name',
         maxLength: 50,
+        unique: true,
       },
     },
     {
