@@ -1,4 +1,4 @@
-export const TopCategoriesSchema = {
+export const FeaturedSectionsSchema = {
   name: 'featuredProductsAndCategories',
   title: 'Featured',
   type: 'document',

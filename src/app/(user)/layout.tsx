@@ -2,7 +2,7 @@
 
 import { CacheProvider } from '@chakra-ui/next-js'
 import { ChakraProvider } from '@chakra-ui/react'
-import { defaultTheme } from '@/config/themes/defaultTheme'
+import { defaultTheme } from '@/config/themes'
 
 export default function RootLayout({
   children,
@@ -12,7 +12,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <title>LS Buy</title>
+        <title>LS shop</title>
         <meta title="description" content="Buy anything online" />
         <link
           rel="icon"
