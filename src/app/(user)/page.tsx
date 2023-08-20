@@ -1,11 +1,14 @@
-'use client'
+import { FeaturedType } from '@src/entities'
+import { getFeaturedItems } from '@src/queries'
 
-import { Box } from '@chakra-ui/react'
-
-export default function Home() {
+export default async function Home() {
+  const items: FeaturedType[] = await getFeaturedItems()
   return (
-    <Box bg="red">
+    <div>
       <h2>Hello World</h2>
-    </Box>
+      {JSON.stringify(items[0].topCategories)}
+    </div>
   )
 }
+
+export const revalidate = 60 * 10 // 10 minutes
