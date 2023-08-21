@@ -5,20 +5,20 @@ import { useLocalStorage } from '@mantine/hooks'
 export const CartContext = createContext({} as CartContextProps)
 
 export const CartProvider: React.FC<CartProviderProps> = ({ children }) => {
-  const [CartItems, setCartItems] = useLocalStorage<CartItem[]>({
+  const [cartItems, setCartItems] = useLocalStorage<CartItem[]>({
     key: 'ls-shop-cart',
     defaultValue: [],
   })
 
   const increaseCount = (itemId: string) => {
-    const items = [...CartItems]
+    const items = [...cartItems]
     const index = items.findIndex((item) => item.id === itemId)
     items[index].count += 1
     setCartItems(items)
   }
 
   const decreaseCount = (itemId: string) => {
-    const items = [...CartItems]
+    const items = [...cartItems]
     const index = items.findIndex((item) => item.id === itemId)
     if (items[index].count > 1) {
       items[index].count -= 1
@@ -46,7 +46,7 @@ export const CartProvider: React.FC<CartProviderProps> = ({ children }) => {
         addItem,
         removeItem,
         resetItems,
-        CartItems,
+        cartItems,
         increaseCount,
         decreaseCount,
       }}

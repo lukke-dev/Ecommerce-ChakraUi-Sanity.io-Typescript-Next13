@@ -13,7 +13,7 @@ export type CartItem = {
 }
 
 export type CartContextProps = {
-  CartItems: CartItem[]
+  cartItems: CartItem[]
   addItem: (item: CartItem) => void
   removeItem: (itemId: string) => void
   resetItems: () => void
