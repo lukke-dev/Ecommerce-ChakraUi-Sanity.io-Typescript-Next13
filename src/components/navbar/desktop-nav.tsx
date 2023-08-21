@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { Cart, Logo } from '..'
+import { Cart, Logo, Wishlist } from '..'
 import { Box, Flex, Stack } from '@chakra-ui/react'
 
 export const DesktopNav: React.FC = () => {
@@ -29,7 +29,7 @@ export const DesktopNav: React.FC = () => {
       </Stack>
 
       <Stack direction="row" spacing={2}>
-        <div>Wishlist</div>
+        <Wishlist />
         <Cart />
       </Stack>
     </Flex>

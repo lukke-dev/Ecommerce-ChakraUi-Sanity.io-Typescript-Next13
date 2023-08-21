@@ -1,1 +1,1 @@
-export * from './cart-item-props'
+export * from './cart-props'

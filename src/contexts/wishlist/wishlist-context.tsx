@@ -4,6 +4,7 @@ import {
   WishlistProviderProps,
 } from './types'
 import { createContext } from 'react'
+import { useCartHook } from '@src/hooks'
 import { useLocalStorage } from '@mantine/hooks'
 
 export const WishlistContext = createContext({} as WishlistContextProps)
@@ -15,6 +16,8 @@ export const WishlistProvider: React.FC<WishlistProviderProps> = ({
     key: 'ls-shop-wishlist',
     defaultValue: [],
   })
+
+  const { cartItems } = useCartHook()
 
   const addItem = (item: WishlistItem) => {
     setWishlistItems((prevState) => [...prevState, item])
@@ -30,6 +33,10 @@ export const WishlistProvider: React.FC<WishlistProviderProps> = ({
     setWishlistItems([])
   }
 
+  const isAddedInCart = (itemId: string): boolean => {
+    return cartItems.some((cartItem) => cartItem.id === itemId)
+  }
+
   return (
     <WishlistContext.Provider
       value={{
@@ -37,6 +44,7 @@ export const WishlistProvider: React.FC<WishlistProviderProps> = ({
         removeItem,
         resetItems,
         wishlistItems,
+        isAddedInCart,
       }}
     >
       {children}

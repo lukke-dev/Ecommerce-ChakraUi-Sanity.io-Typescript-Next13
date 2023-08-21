@@ -1,5 +1,5 @@
-import { Cart, Logo } from '..'
 import { NavMenu } from './nav-menu'
+import { Cart, Logo, Wishlist } from '..'
 import { Box, Flex, Stack } from '@chakra-ui/react'
 
 export const MobileNav: React.FC = () => {
@@ -18,7 +18,7 @@ export const MobileNav: React.FC = () => {
         <Logo />
 
         <Stack direction="row" spacing={1}>
-          <div>Wishlist</div>
+          <Wishlist />
           <Cart />
         </Stack>
       </Flex>

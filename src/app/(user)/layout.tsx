@@ -26,15 +26,15 @@ export default function RootLayout({
       <body>
         <CacheProvider>
           <ChakraProvider theme={defaultTheme}>
-            <WishlistProvider>
-              <CartProvider>
+            <CartProvider>
+              <WishlistProvider>
                 <>
                   <Navbar />
                   {children}
                   <footer>footer</footer>
                 </>
-              </CartProvider>
-            </WishlistProvider>
+              </WishlistProvider>
+            </CartProvider>
           </ChakraProvider>
         </CacheProvider>
       </body>

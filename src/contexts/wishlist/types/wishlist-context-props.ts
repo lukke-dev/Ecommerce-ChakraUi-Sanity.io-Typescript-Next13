@@ -17,4 +17,5 @@ export type WishlistContextProps = {
   addItem: (item: WishlistItem) => void
   removeItem: (itemId: string) => void
   resetItems: () => void
+  isAddedInCart: (itemId: string) => boolean
 }

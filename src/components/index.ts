@@ -1,4 +1,5 @@
 export * from './admin-navbar'
+export * from './wishlist'
 export * from './navbar'
 export * from './logo'
 export * from './cart'
