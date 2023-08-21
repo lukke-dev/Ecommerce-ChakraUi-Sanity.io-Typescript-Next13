@@ -36,9 +36,7 @@ export const Cart: React.FC = () => {
         variant="ghost"
         onClick={onOpen}
         color="brand.primary"
-        _hover={{
-          bgColor: 'transparent',
-        }}
+        _hover={{ bgColor: 'transparent' }}
       >
         <BsCart4 /> <Text mx="1">Cart</Text>
         {cartItems.length !== 0 && (
@@ -82,12 +80,8 @@ export const Cart: React.FC = () => {
                   <Button
                     color="white"
                     bgColor="brand.primary"
-                    _hover={{
-                      bgColor: 'brand.primaryLight',
-                    }}
-                    _active={{
-                      bgColor: 'brand.primaryLight',
-                    }}
+                    _hover={{ bgColor: 'brand.primaryLight' }}
+                    _active={{ bgColor: 'brand.primaryLight' }}
                   >
                     Checkout
                   </Button>
