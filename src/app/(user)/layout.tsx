@@ -1,8 +1,10 @@
 'use client'
 
-import { CacheProvider } from '@chakra-ui/next-js'
-import { ChakraProvider } from '@chakra-ui/react'
+import { Navbar } from '@src/components'
 import { defaultTheme } from '@/config/themes'
+import { ChakraProvider } from '@chakra-ui/react'
+import { CacheProvider } from '@chakra-ui/next-js'
+import { CartProvider, WishlistProvider } from '@src/contexts'
 
 export default function RootLayout({
   children,
@@ -23,7 +25,17 @@ export default function RootLayout({
       </head>
       <body>
         <CacheProvider>
-          <ChakraProvider theme={defaultTheme}>{children}</ChakraProvider>
+          <ChakraProvider theme={defaultTheme}>
+            <WishlistProvider>
+              <CartProvider>
+                <>
+                  <Navbar />
+                  {children}
+                  <footer>footer</footer>
+                </>
+              </CartProvider>
+            </WishlistProvider>
+          </ChakraProvider>
         </CacheProvider>
       </body>
     </html>
