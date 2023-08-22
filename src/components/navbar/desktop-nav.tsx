@@ -1,6 +1,6 @@
 import Link from 'next/link'
-import { Cart, Logo, Wishlist } from '..'
 import { Box, Flex, Stack } from '@chakra-ui/react'
+import { Cart, Logo, SearchField, Wishlist } from '..'
 
 export const DesktopNav: React.FC = () => {
   return (
@@ -25,7 +25,7 @@ export const DesktopNav: React.FC = () => {
           <Link href="/categories">Categories</Link>
         </Box>
 
-        <div>Search</div>
+        <SearchField />
       </Stack>
 
       <Stack direction="row" spacing={2}>

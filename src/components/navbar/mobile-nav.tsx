@@ -1,6 +1,6 @@
 import { NavMenu } from './nav-menu'
-import { Cart, Logo, Wishlist } from '..'
 import { Box, Flex, Stack } from '@chakra-ui/react'
+import { Cart, Logo, SearchField, Wishlist } from '..'
 
 export const MobileNav: React.FC = () => {
   return (
@@ -28,7 +28,7 @@ export const MobileNav: React.FC = () => {
         mb="1rem"
         display={{ base: 'block', lg: 'none' }}
       >
-        <div>Search</div>
+        <SearchField />
       </Box>
     </>
   )

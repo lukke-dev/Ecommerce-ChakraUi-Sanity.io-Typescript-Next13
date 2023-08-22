@@ -1,7 +1,7 @@
 import { groq } from 'next-sanity'
 import { sanityClient } from '@src/utils/sanityClient'
 
-const getFeaturedItemsQueries = `
+const getFeaturedItemsQuery = `
     *[_type == "featuredProductsAndCategories"]{
         "topCategories": topCategories[]->{
             "id": _id,
@@ -40,5 +40,5 @@ const getFeaturedItemsQueries = `
 `
 
 export const getFeaturedItems = () => {
-  return sanityClient.fetch(groq`${getFeaturedItemsQueries}`)
+  return sanityClient.fetch(groq`${getFeaturedItemsQuery}`)
 }
