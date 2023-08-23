@@ -4,7 +4,7 @@ import { useCartHook } from '@src/hooks'
 import { Button } from '@chakra-ui/react'
 import { AddToCartButtonProps } from './types'
 
-export const AddToCardButton: React.FC<AddToCartButtonProps> = ({
+export const AddToCartButton: React.FC<AddToCartButtonProps> = ({
   product,
   count,
 }) => {
