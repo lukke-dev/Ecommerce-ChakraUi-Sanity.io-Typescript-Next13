@@ -1,13 +1,27 @@
 import { FeaturedType } from '@src/entities'
 import { getFeaturedItems } from '@src/queries'
+import { Banner, FeaturedProducts, TopCategories } from './home'
 
 export default async function Home() {
-  const items: FeaturedType[] = await getFeaturedItems()
+  const featuredItems: FeaturedType[] = await getFeaturedItems()
+
   return (
-    <div>
-      <h2>Hello World</h2>
-      {JSON.stringify(items[0].topCategories)}
-    </div>
+    <main>
+      <Banner />
+      <TopCategories categories={featuredItems[0].topCategories} />
+      <FeaturedProducts
+        title="Best Deals For You"
+        products={featuredItems[0].bestDeals}
+      />
+      <FeaturedProducts
+        title="Most Selling Products"
+        products={featuredItems[0].mostSellingProducts}
+      />
+      <FeaturedProducts
+        title="Trending Products"
+        products={featuredItems[0].trendingProducts}
+      />
+    </main>
   )
 }
 
