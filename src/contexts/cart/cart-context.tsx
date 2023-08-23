@@ -1,7 +1,7 @@
 import { CartItem, CartContextProps, CartProviderProps } from './types'
 import { createContext } from 'react'
-import { useLocalStorage } from '@mantine/hooks'
 import { useWishlistHook } from '@src/hooks'
+import { useLocalStorage } from '@mantine/hooks'
 
 export const CartContext = createContext({} as CartContextProps)
 
@@ -44,7 +44,7 @@ export const CartProvider: React.FC<CartProviderProps> = ({ children }) => {
   }
 
   const isAddedInWishlist = (itemId: string): boolean => {
-    return wishlistItems.some((cartItem) => cartItem.id === itemId)
+    return wishlistItems?.some((cartItem) => cartItem.id === itemId)
   }
 
   return (
