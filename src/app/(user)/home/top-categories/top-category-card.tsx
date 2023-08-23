@@ -6,7 +6,7 @@ export const TopCategoryCard: React.FC<TopCategoryCardProps> = ({
   category,
 }) => {
   return (
-    <Link href={`/categories/${category.id}`}>
+    <Link href={`/categories/${category.slug}`}>
       <Card
         w="100%"
         p="10px"
