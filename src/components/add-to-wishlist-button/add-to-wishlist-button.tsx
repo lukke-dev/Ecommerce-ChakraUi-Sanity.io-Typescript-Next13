@@ -4,7 +4,7 @@ import { useWishlistHook } from '@src/hooks'
 import { AddToWishlistButtonProps } from './types'
 import { BsHeart, BsHeartFill } from 'react-icons/bs'
 
-export const AddWishlistButton: React.FC<AddToWishlistButtonProps> = ({
+export const AddToWishlistButton: React.FC<AddToWishlistButtonProps> = ({
   product,
 }) => {
   const { addItem, removeItem, isAddedInCart } = useWishlistHook()

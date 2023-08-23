@@ -1,4 +1,5 @@
-export * from './add-wishlist-button'
+export * from './add-to-wishlist-button'
+export * from './add-to-cart-button'
 export * from './admin-navbar'
 export * from './search-field'
 export * from './product-card'
