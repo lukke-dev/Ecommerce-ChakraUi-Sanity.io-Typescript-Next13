@@ -1,5 +1,5 @@
 'use client'
-
+import 'swiper/css'
 import { Navbar } from '@src/components'
 import { defaultTheme } from '@/config/themes'
 import { ChakraProvider } from '@chakra-ui/react'
