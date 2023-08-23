@@ -20,4 +20,5 @@ export type CartContextProps = {
   resetItems: () => void
   increaseCount: (itemId: string) => void
   decreaseCount: (itemId: string) => void
+  isAddedInWishlist: (itemId: string) => boolean
 }
