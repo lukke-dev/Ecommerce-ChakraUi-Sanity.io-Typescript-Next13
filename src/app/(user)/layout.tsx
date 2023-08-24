@@ -1,13 +1,14 @@
 'use client'
+
 import 'swiper/css'
 import { store } from '@src/store'
-import { Navbar } from '@src/components'
 import { persistStore } from 'redux-persist'
 import { defaultTheme } from '@/config/themes'
 import { ChakraProvider } from '@chakra-ui/react'
 import { CacheProvider } from '@chakra-ui/next-js'
 import { Provider as ReduxProvider } from 'react-redux'
 import { PersistGate } from 'redux-persist/integration/react'
+import { DefaultLayout } from '@src/layouts'
 
 export default function RootLayout({
   children,
@@ -31,9 +32,7 @@ export default function RootLayout({
           <ChakraProvider theme={defaultTheme}>
             <ReduxProvider store={store}>
               <PersistGate loading={null} persistor={persistStore(store)}>
-                <Navbar />
-                {children}
-                <footer>footer</footer>
+                <DefaultLayout>{children}</DefaultLayout>
               </PersistGate>
             </ReduxProvider>
           </ChakraProvider>
