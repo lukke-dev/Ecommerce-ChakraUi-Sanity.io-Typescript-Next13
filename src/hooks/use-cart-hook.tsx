@@ -1,8 +1,7 @@
-import { useContext } from 'react'
-import { CartContext, CartContextProps } from '@src/contexts'
+import { useAppSelector } from '@src/store'
 
-export function useCartHook(): CartContextProps {
-  const context = useContext(CartContext)
-
-  return context
+export function useCartHook() {
+  return useAppSelector((state) => {
+    return { cartItems: state.cart.cartItems }
+  })
 }

@@ -1,10 +1,11 @@
 'use client'
 import 'swiper/css'
+import { store } from '@src/store'
 import { Navbar } from '@src/components'
 import { defaultTheme } from '@/config/themes'
 import { ChakraProvider } from '@chakra-ui/react'
 import { CacheProvider } from '@chakra-ui/next-js'
-import { CartProvider, WishlistProvider } from '@src/contexts'
+import { Provider as ReduxProvider } from 'react-redux'
 
 export default function RootLayout({
   children,
@@ -26,15 +27,11 @@ export default function RootLayout({
       <body>
         <CacheProvider>
           <ChakraProvider theme={defaultTheme}>
-            <CartProvider>
-              <WishlistProvider>
-                <>
-                  <Navbar />
-                  {children}
-                  <footer>footer</footer>
-                </>
-              </WishlistProvider>
-            </CartProvider>
+            <ReduxProvider store={store}>
+              <Navbar />
+              {children}
+              <footer>footer</footer>
+            </ReduxProvider>
           </ChakraProvider>
         </CacheProvider>
       </body>

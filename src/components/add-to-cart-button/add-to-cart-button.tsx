@@ -2,17 +2,25 @@
 import React from 'react'
 import { useCartHook } from '@src/hooks'
 import { Button } from '@chakra-ui/react'
+import { useAppDispatch } from '@src/store'
 import { AddToCartButtonProps } from './types'
+import { itemAddedInCollection } from '@src/utils'
+import { addItemToCart, removeItemFromCart } from '@src/store/slices'
 
 export const AddToCartButton: React.FC<AddToCartButtonProps> = ({
   product,
   count,
 }) => {
-  const { addItem, removeItem, isAddedInWishlist } = useCartHook()
+  const dispatch = useAppDispatch()
+  const { cartItems } = useCartHook()
+  const isAddedInCart = itemAddedInCollection({
+    itemId: product.id,
+    collection: cartItems,
+  })
 
   return (
     <>
-      {isAddedInWishlist(product.id) ? (
+      {isAddedInCart ? (
         <Button
           w="150px"
           size="sm"
@@ -20,7 +28,7 @@ export const AddToCartButton: React.FC<AddToCartButtonProps> = ({
           variant="outline"
           borderRadius="50px"
           borderColor="gray.200"
-          onClick={() => removeItem(product.id)}
+          onClick={() => dispatch(removeItemFromCart(product.id))}
         >
           Remove from cart
         </Button>
@@ -33,14 +41,16 @@ export const AddToCartButton: React.FC<AddToCartButtonProps> = ({
           color="brand.primary"
           borderColor="brand.primary"
           onClick={() =>
-            addItem({
-              count,
-              id: product.id,
-              name: product.name,
-              slug: product.slug,
-              price: product.price,
-              mainImage: product.mainImage,
-            })
+            dispatch(
+              addItemToCart({
+                count,
+                id: product.id,
+                name: product.name,
+                slug: product.slug,
+                price: product.price,
+                mainImage: product.mainImage,
+              }),
+            )
           }
         >
           Add to cart

@@ -10,10 +10,15 @@ import {
 import Link from 'next/link'
 import { CartItemProps } from '.'
 import { BsTrash } from 'react-icons/bs'
-import { useCartHook } from '@src/hooks'
+import { useAppDispatch } from '@src/store'
+import {
+  decreaseCount,
+  increaseCount,
+  removeItemFromCart,
+} from '@src/store/slices'
 
 export const CartItem: React.FC<CartItemProps> = ({ item }) => {
-  const { increaseCount, decreaseCount, removeItem } = useCartHook()
+  const dispatch = useAppDispatch()
 
   return (
     <Grid
@@ -42,7 +47,7 @@ export const CartItem: React.FC<CartItemProps> = ({ item }) => {
       </GridItem>
       <GridItem colSpan={{ base: 3, lg: 2 }} justifyContent="flex-end">
         <HStack my="0.5rem" justifyContent="flex-end">
-          <Button onClick={() => decreaseCount(item.id)}>-</Button>
+          <Button onClick={() => dispatch(decreaseCount(item.id))}>-</Button>
           <Input
             min="1"
             max="20"
@@ -52,7 +57,7 @@ export const CartItem: React.FC<CartItemProps> = ({ item }) => {
             readOnly={true}
             value={item.count}
           />
-          <Button onClick={() => increaseCount(item.id)}>+</Button>
+          <Button onClick={() => dispatch(increaseCount(item.id))}>+</Button>
         </HStack>
       </GridItem>
       <GridItem textAlign="right" colSpan={{ base: 2, lg: 1 }}>
@@ -62,7 +67,7 @@ export const CartItem: React.FC<CartItemProps> = ({ item }) => {
         <Button
           variant="ghost"
           colorScheme="red"
-          onClick={() => removeItem(item.id)}
+          onClick={() => dispatch(removeItemFromCart(item.id))}
         >
           <BsTrash />
         </Button>

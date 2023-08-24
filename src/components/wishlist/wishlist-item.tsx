@@ -1,17 +1,26 @@
 import Link from 'next/link'
 import { WishlistItemProps } from '.'
-import { useWishlistHook } from '@src/hooks'
+import { useAppDispatch } from '@src/store'
 import { BsCart, BsCartX, BsTrash } from 'react-icons/bs'
 import { Button, Grid, GridItem, Image, Text } from '@chakra-ui/react'
+import { addItemToWishlist, removeItemFromWishlist } from '@src/store/slices'
+import { useCartHook } from '@src/hooks'
+import { itemAddedInCollection } from '@src/utils'
 
 export const WishlistItem: React.FC<WishlistItemProps> = ({ item }) => {
-  const { addItem, removeItem, isAddedInCart } = useWishlistHook()
+  const dispatch = useAppDispatch()
 
   const getSubstring = (text: string, substringEnd: number): string => {
     return text?.length > substringEnd
       ? `${text?.substring(0, substringEnd)}...`
       : text
   }
+
+  const { cartItems } = useCartHook()
+  const isAddedInCart = itemAddedInCollection({
+    itemId: item.id,
+    collection: cartItems,
+  })
 
   return (
     <Grid
@@ -49,7 +58,7 @@ export const WishlistItem: React.FC<WishlistItemProps> = ({ item }) => {
       </GridItem>
 
       <GridItem textAlign="right">
-        {isAddedInCart(item.id) ? (
+        {isAddedInCart ? (
           <Button
             size="xs"
             bgColor="white"
@@ -57,7 +66,7 @@ export const WishlistItem: React.FC<WishlistItemProps> = ({ item }) => {
             borderColor="gray.300"
             color="gray.500"
             title="Remove from Cart"
-            onClick={() => removeItem(item.id)}
+            onClick={() => dispatch(removeItemFromWishlist(item.id))}
           >
             <BsCartX />
           </Button>
@@ -69,7 +78,7 @@ export const WishlistItem: React.FC<WishlistItemProps> = ({ item }) => {
             borderColor="brand.primary"
             color="brand.primary"
             title="Add to Cart"
-            onClick={() => addItem(item)}
+            onClick={() => dispatch(addItemToWishlist(item))}
           >
             <BsCart />
           </Button>
@@ -81,7 +90,7 @@ export const WishlistItem: React.FC<WishlistItemProps> = ({ item }) => {
           variant="ghost"
           colorScheme="red"
           size="xs"
-          onClick={() => removeItem(item.id)}
+          onClick={() => dispatch(removeItemFromWishlist(item.id))}
         >
           <BsTrash />
         </Button>

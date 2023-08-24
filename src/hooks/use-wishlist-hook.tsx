@@ -1,8 +1,7 @@
-import { useContext } from 'react'
-import { WishlistContext, WishlistContextProps } from '@src/contexts'
+import { useAppSelector } from '@src/store'
 
-export function useWishlistHook(): WishlistContextProps {
-  const context = useContext(WishlistContext)
-
-  return context
+export function useWishlistHook() {
+  return useAppSelector((state) => {
+    return { wishlistItems: state.wishlist.wishlistItems }
+  })
 }

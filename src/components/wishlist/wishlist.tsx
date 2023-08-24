@@ -14,9 +14,12 @@ import {
 import { WishlistItem } from '.'
 import { BsHeart } from 'react-icons/bs'
 import { useWishlistHook } from '@src/hooks'
+import { useAppDispatch } from '@src/store'
+import { resetWishlistItems } from '@src/store/slices'
 
 export const Wishlist: React.FC = () => {
-  const { wishlistItems, resetItems } = useWishlistHook()
+  const dispatch = useAppDispatch()
+  const { wishlistItems } = useWishlistHook()
 
   return (
     <Popover>
@@ -63,7 +66,11 @@ export const Wishlist: React.FC = () => {
         </PopoverBody>
         <PopoverFooter>
           {wishlistItems.length !== 0 && (
-            <Button variant="outline" mr={3} onClick={() => resetItems()}>
+            <Button
+              variant="outline"
+              mr={3}
+              onClick={() => dispatch(resetWishlistItems())}
+            >
               Clear Wishlist
             </Button>
           )}

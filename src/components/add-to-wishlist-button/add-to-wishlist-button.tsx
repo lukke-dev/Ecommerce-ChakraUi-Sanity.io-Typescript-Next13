@@ -1,17 +1,25 @@
 import React from 'react'
 import { Button } from '@chakra-ui/react'
+import { useAppDispatch } from '@src/store'
 import { useWishlistHook } from '@src/hooks'
+import { itemAddedInCollection } from '@src/utils'
 import { AddToWishlistButtonProps } from './types'
 import { BsHeart, BsHeartFill } from 'react-icons/bs'
+import { addItemToWishlist, removeItemFromWishlist } from '@src/store/slices'
 
 export const AddToWishlistButton: React.FC<AddToWishlistButtonProps> = ({
   product,
 }) => {
-  const { addItem, removeItem, isAddedInCart } = useWishlistHook()
+  const dispatch = useAppDispatch()
+  const { wishlistItems } = useWishlistHook()
+  const isAddedInWishlist = itemAddedInCollection({
+    itemId: product.id,
+    collection: wishlistItems,
+  })
 
   return (
     <>
-      {isAddedInCart(product.id) ? (
+      {isAddedInWishlist ? (
         <Button
           rounded="full"
           pos="absolute"
@@ -20,7 +28,7 @@ export const AddToWishlistButton: React.FC<AddToWishlistButtonProps> = ({
           bgColor="transparent"
           title="Remove from Wishlist"
           _hover={{ bgColor: 'transparent' }}
-          onClick={() => removeItem(product.id)}
+          onClick={() => dispatch(removeItemFromWishlist(product.id))}
         >
           <BsHeartFill />
         </Button>
@@ -32,7 +40,7 @@ export const AddToWishlistButton: React.FC<AddToWishlistButtonProps> = ({
           color="red.400"
           bgColor="transparent"
           title="Add to Wishlist"
-          onClick={() => addItem(product)}
+          onClick={() => dispatch(addItemToWishlist(product))}
           _hover={{ bgColor: 'transparent' }}
         >
           <BsHeart />

@@ -1,5 +1,5 @@
 import { groq } from 'next-sanity'
-import { sanityClient } from '@src/utils/sanityClient'
+import { sanityClient } from '@src/utils'
 
 const searchProductsQuery = groq`
     *[_type == "product" && (name match $searchText || description match $searchText) ] {

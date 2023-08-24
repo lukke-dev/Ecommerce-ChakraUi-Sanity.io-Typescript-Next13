@@ -1,5 +1,5 @@
 import { groq } from 'next-sanity'
-import { sanityClient } from '@src/utils/sanityClient'
+import { sanityClient } from '@src/utils'
 
 const getFeaturedItemsQuery = `
     *[_type == "featuredProductsAndCategories"]{
