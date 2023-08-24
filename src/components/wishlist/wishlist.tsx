@@ -13,13 +13,13 @@ import {
 } from '@chakra-ui/react'
 import { WishlistItem } from '.'
 import { BsHeart } from 'react-icons/bs'
-import { useWishlistHook } from '@src/hooks'
 import { useAppDispatch } from '@src/store'
+import { useWishlistHook } from '@src/hooks'
 import { resetWishlistItems } from '@src/store/slices'
 
 export const Wishlist: React.FC = () => {
   const dispatch = useAppDispatch()
-  const { wishlistItems } = useWishlistHook()
+  const { wishlistItems, wishlistItemsLength } = useWishlistHook()
 
   return (
     <Popover>
@@ -31,7 +31,7 @@ export const Wishlist: React.FC = () => {
           _hover={{ bgColor: 'transparent' }}
         >
           <BsHeart size="0.9rem" /> <Text mx="1">Wishlist</Text>
-          {wishlistItems.length !== 0 && (
+          {wishlistItemsLength !== 0 && (
             <Flex
               top="0px"
               right="5px"
@@ -44,7 +44,7 @@ export const Wishlist: React.FC = () => {
               fontSize="0.6rem"
               bgColor="brand.primaryLight"
             >
-              {wishlistItems.length}
+              {wishlistItemsLength}
             </Flex>
           )}
         </Button>
@@ -56,7 +56,7 @@ export const Wishlist: React.FC = () => {
           Wishlist
         </PopoverHeader>
         <PopoverBody p="1rem">
-          {wishlistItems.length === 0 ? (
+          {wishlistItemsLength === 0 ? (
             <>Your Wishlist is Empty</>
           ) : (
             wishlistItems.map((item) => (
@@ -65,7 +65,7 @@ export const Wishlist: React.FC = () => {
           )}
         </PopoverBody>
         <PopoverFooter>
-          {wishlistItems.length !== 0 && (
+          {wishlistItemsLength !== 0 && (
             <Button
               variant="outline"
               mr={3}

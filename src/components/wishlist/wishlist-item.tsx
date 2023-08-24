@@ -1,11 +1,11 @@
 import Link from 'next/link'
 import { WishlistItemProps } from '.'
+import { useCartHook } from '@src/hooks'
 import { useAppDispatch } from '@src/store'
+import { itemAddedInCollection } from '@src/utils'
 import { BsCart, BsCartX, BsTrash } from 'react-icons/bs'
 import { Button, Grid, GridItem, Image, Text } from '@chakra-ui/react'
 import { addItemToWishlist, removeItemFromWishlist } from '@src/store/slices'
-import { useCartHook } from '@src/hooks'
-import { itemAddedInCollection } from '@src/utils'
 
 export const WishlistItem: React.FC<WishlistItemProps> = ({ item }) => {
   const dispatch = useAppDispatch()

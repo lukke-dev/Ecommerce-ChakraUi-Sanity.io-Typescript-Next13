@@ -21,16 +21,8 @@ import { resetCartItems } from '@src/store/slices'
 
 export const Cart: React.FC = () => {
   const dispatch = useAppDispatch()
-  const { cartItems } = useCartHook()
+  const { cartItems, cartItemsLength, cartItemsTotalPrice } = useCartHook()
   const { isOpen, onOpen, onClose } = useDisclosure()
-
-  const calculateItemsTotal = (items: typeof cartItems): number => {
-    return items.reduce(
-      (previousValue, currentValue) =>
-        previousValue + currentValue.price * currentValue.count,
-      0,
-    )
-  }
 
   return (
     <>
@@ -42,7 +34,7 @@ export const Cart: React.FC = () => {
         _hover={{ bgColor: 'transparent' }}
       >
         <BsCart4 /> <Text mx="1">Cart</Text>
-        {cartItems.length !== 0 && (
+        {cartItemsLength !== 0 && (
           <Flex
             top="0px"
             right="5px"
@@ -55,7 +47,7 @@ export const Cart: React.FC = () => {
             fontSize="0.6rem"
             bgColor="brand.primaryLight"
           >
-            {cartItems.length}
+            {cartItemsLength}
           </Flex>
         )}
       </Button>
@@ -64,16 +56,16 @@ export const Cart: React.FC = () => {
         <DrawerContent>
           <DrawerCloseButton />
           <DrawerHeader color="pink.500">
-            <Text>Cart ( {cartItems.length} Items )</Text>
+            <Text>Cart ( {cartItemsLength} Items )</Text>
           </DrawerHeader>
           <DrawerBody>
-            {cartItems.length === 0 ? (
+            {cartItemsLength === 0 ? (
               <Text>Your Cart is Empty</Text>
             ) : (
               cartItems.map((item) => <CartItem key={item.id} item={item} />)
             )}
           </DrawerBody>
-          {cartItems.length !== 0 && (
+          {cartItemsLength !== 0 && (
             <DrawerFooter justifyContent="space-between">
               <Box>
                 <Button
@@ -94,9 +86,7 @@ export const Cart: React.FC = () => {
                   </Button>
                 </Link>
               </Box>
-              <Text fontWeight="bold">
-                Total: $ {calculateItemsTotal(cartItems)}
-              </Text>
+              <Text fontWeight="bold">Total: $ {cartItemsTotalPrice}</Text>
             </DrawerFooter>
           )}
         </DrawerContent>

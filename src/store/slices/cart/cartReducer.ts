@@ -1,5 +1,6 @@
+import { RootState } from '@src/store'
 import { CartItem, CartState } from './types'
-import { createSlice, PayloadAction } from '@reduxjs/toolkit'
+import { createSelector, createSlice, PayloadAction } from '@reduxjs/toolkit'
 
 const initialState: CartState = {
   cartItems: [],
@@ -54,3 +55,19 @@ export const {
   resetCartItems,
   removeItemFromCart,
 } = cartSlice.actions
+
+export const memoizedCartItems = createSelector(
+  (state: RootState) => state.cart.cartItems,
+  (cartItems) => {
+    return cartItems.length
+  },
+)
+
+export const memoizedCartTotalPrice = createSelector(
+  (state: RootState) => state.cart.cartItems,
+  (cartItems) => {
+    return cartItems
+      .reduce((acc, item) => (acc += item.price * item.count), 0)
+      .toFixed(2)
+  },
+)

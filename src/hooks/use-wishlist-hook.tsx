@@ -1,7 +1,11 @@
 import { useAppSelector } from '@src/store'
+import { memoizedWishlistItems } from '@src/store/slices'
 
 export function useWishlistHook() {
-  return useAppSelector((state) => {
-    return { wishlistItems: state.wishlist.wishlistItems }
-  })
+  const wishlistItemsLength = useAppSelector(memoizedWishlistItems)
+  const wishlistItems = useAppSelector((state) => state.wishlist.wishlistItems)
+  return {
+    wishlistItems,
+    wishlistItemsLength,
+  }
 }

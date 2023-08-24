@@ -1,5 +1,6 @@
+import { RootState } from '@src/store'
 import { WishlistItem, WishlistState } from './types'
-import { PayloadAction, createSlice } from '@reduxjs/toolkit'
+import { PayloadAction, createSlice, createSelector } from '@reduxjs/toolkit'
 
 const initialState: WishlistState = {
   wishlistItems: [],
@@ -32,3 +33,10 @@ export const wishlistReducer = wishlistSlice.reducer
 
 export const { addItemToWishlist, removeItemFromWishlist, resetWishlistItems } =
   wishlistSlice.actions
+
+export const memoizedWishlistItems = createSelector(
+  (state: RootState) => state.wishlist.wishlistItems,
+  (wishlistItems) => {
+    return wishlistItems.length
+  },
+)

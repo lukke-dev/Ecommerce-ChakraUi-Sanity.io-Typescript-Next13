@@ -1,10 +1,10 @@
 import React from 'react'
 import { Button } from '@chakra-ui/react'
-import { useAppDispatch } from '@src/store'
-import { useWishlistHook } from '@src/hooks'
 import { itemAddedInCollection } from '@src/utils'
 import { AddToWishlistButtonProps } from './types'
 import { BsHeart, BsHeartFill } from 'react-icons/bs'
+import { useAppDispatch } from '@src/store'
+import { useWishlistHook } from '@src/hooks'
 import { addItemToWishlist, removeItemFromWishlist } from '@src/store/slices'
 
 export const AddToWishlistButton: React.FC<AddToWishlistButtonProps> = ({
