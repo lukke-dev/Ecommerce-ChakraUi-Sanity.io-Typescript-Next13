@@ -3,12 +3,23 @@ import { configureStore } from '@reduxjs/toolkit'
 import { wishlistReducer, cartReducer } from './slices'
 import { TypedUseSelectorHook, useSelector, useDispatch } from 'react-redux'
 
+import storage from 'redux-persist/lib/storage'
+import { persistReducer } from 'redux-persist'
+
 const rootReducer = combineReducers({
   wishlist: wishlistReducer,
   cart: cartReducer,
 })
+
+const persistConfig = {
+  key: 'root',
+  storage,
+}
+
+const persistedReducer = persistReducer(persistConfig, rootReducer)
+
 export const store = configureStore({
-  reducer: rootReducer,
+  reducer: persistedReducer,
 })
 
 export type RootState = ReturnType<typeof store.getState>
