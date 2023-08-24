@@ -1,6 +1,6 @@
 import { Hero } from '@src/components'
-import { AllProducts } from '@src/components/all-products/all-products'
 import { ProductType } from '@src/entities'
+import { AllProducts } from '@src/features'
 import { sanityClient } from '@src/utils'
 import { groq } from 'next-sanity'
 
@@ -20,7 +20,7 @@ const getProductsAsync = () => {
   return sanityClient.fetch(groq`${getAllProductsQueries}`)
 }
 
-export const revalidate = 60 // revalidate this page every 60 seconds
+export const revalidate = 10 // revalidate this page every 60 seconds
 
 export default async function ProductsPage() {
   const products: ProductType[] = await getProductsAsync()

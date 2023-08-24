@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import { AllProductsProps } from './types'
 import { usePagination } from '@mantine/hooks'
 import { Button, Flex } from '@chakra-ui/react'
-import { CustomBreadcrumb, ProductCard } from '..'
+import { CustomBreadcrumb, ProductCard } from '../../../components'
 
 export const AllProducts: React.FC<AllProductsProps> = ({
   products,
