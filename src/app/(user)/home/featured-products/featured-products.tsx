@@ -2,11 +2,11 @@
 
 import React from 'react'
 import { SwiperOptions } from 'swiper/types'
-import { ProductCard } from '@src/components'
 import { Box, Heading } from '@chakra-ui/react'
 import { FeaturedProductsProps } from './types'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Navigation, Autoplay, A11y } from 'swiper/modules'
+import { ProductCard, SwiperNavButtons } from '@src/components'
 
 export const FeaturedProducts = ({
   title,
@@ -41,6 +41,8 @@ export const FeaturedProducts = ({
               <ProductCard product={product} />
             </SwiperSlide>
           ))}
+
+          <SwiperNavButtons />
         </Swiper>
       </Box>
     </Box>
