@@ -38,8 +38,8 @@ export const AddToCartButton: React.FC<AddToCartButtonProps> = ({
           size="sm"
           variant="outline"
           borderRadius="50px"
-          color="brand.primary"
-          borderColor="brand.primary"
+          color="pink.500"
+          borderColor="pink.500"
           onClick={() =>
             dispatch(
               addItemToCart({

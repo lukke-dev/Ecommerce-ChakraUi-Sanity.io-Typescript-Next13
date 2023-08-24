@@ -33,8 +33,8 @@ export const TopCategories: React.FC<TopCategoriesProps> = ({ categories }) => {
           rounded="full"
           bgColor="white"
           variant="outline"
-          color="brand.primary"
-          borderColor="brand.primary"
+          color="pink.500"
+          borderColor="pink.500"
         >
           Browse All Categories
         </Button>

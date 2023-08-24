@@ -6,9 +6,9 @@ export const Logo: React.FC = () => {
   return (
     <Link href="/">
       <Text color="gray.800" fontWeight="bold">
-        LS{' '}
-        <Text as="span" color="brand.primary">
-          shop
+        LD{' '}
+        <Text as="span" color="pink.500">
+          Shop
         </Text>
       </Text>
     </Link>

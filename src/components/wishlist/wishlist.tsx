@@ -27,7 +27,7 @@ export const Wishlist: React.FC = () => {
         <Button
           pos="relative"
           variant="ghost"
-          color="brand.primary"
+          color="pink.500"
           _hover={{ bgColor: 'transparent' }}
         >
           <BsHeart size="0.9rem" /> <Text mx="1">Wishlist</Text>
@@ -52,7 +52,7 @@ export const Wishlist: React.FC = () => {
       <PopoverContent>
         <PopoverArrow />
         <PopoverCloseButton />
-        <PopoverHeader color="brand.primary" fontWeight="bold">
+        <PopoverHeader color="pink.500" fontWeight="bold">
           Wishlist
         </PopoverHeader>
         <PopoverBody p="1rem">

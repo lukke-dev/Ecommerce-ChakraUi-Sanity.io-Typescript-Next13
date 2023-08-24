@@ -17,7 +17,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <title>LS shop</title>
+        <title>LD Shop</title>
         <meta title="description" content="Buy anything online" />
         <link
           rel="icon"

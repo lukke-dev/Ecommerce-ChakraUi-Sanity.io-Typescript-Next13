@@ -16,7 +16,7 @@ export const SwiperNavButtons: React.FC = () => {
         borderWidth="1px"
         icon={<FaChevronLeft />}
         color="brand.primaryDark"
-        borderColor="brand.primary"
+        borderColor="pink.500"
         onClick={() => swiper.slidePrev()}
       />
       <IconButton
@@ -27,7 +27,7 @@ export const SwiperNavButtons: React.FC = () => {
         aria-label="Next"
         color="brand.primaryDark"
         icon={<FaChevronRight />}
-        borderColor="brand.primary"
+        borderColor="pink.500"
         onClick={() => swiper.slideNext()}
       />
     </Box>

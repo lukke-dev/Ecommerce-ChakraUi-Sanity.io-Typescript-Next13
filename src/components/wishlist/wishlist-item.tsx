@@ -75,8 +75,8 @@ export const WishlistItem: React.FC<WishlistItemProps> = ({ item }) => {
             size="xs"
             bgColor="white"
             borderWidth="1px"
-            borderColor="brand.primary"
-            color="brand.primary"
+            borderColor="pink.500"
+            color="pink.500"
             title="Add to Cart"
             onClick={() => dispatch(addItemToWishlist(item))}
           >

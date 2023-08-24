@@ -38,7 +38,7 @@ export const Cart: React.FC = () => {
         pos="relative"
         variant="ghost"
         onClick={onOpen}
-        color="brand.primary"
+        color="pink.500"
         _hover={{ bgColor: 'transparent' }}
       >
         <BsCart4 /> <Text mx="1">Cart</Text>
@@ -63,7 +63,7 @@ export const Cart: React.FC = () => {
         <DrawerOverlay />
         <DrawerContent>
           <DrawerCloseButton />
-          <DrawerHeader color="brand.primary">
+          <DrawerHeader color="pink.500">
             <Text>Cart ( {cartItems.length} Items )</Text>
           </DrawerHeader>
           <DrawerBody>
@@ -86,7 +86,7 @@ export const Cart: React.FC = () => {
                 <Link href="/checkout">
                   <Button
                     color="white"
-                    bgColor="brand.primary"
+                    bgColor="pink.500"
                     _hover={{ bgColor: 'brand.primaryLight' }}
                     _active={{ bgColor: 'brand.primaryLight' }}
                   >

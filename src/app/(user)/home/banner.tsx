@@ -19,7 +19,7 @@ export const Banner: React.FC = () => {
         <Box w={{ base: '100%', lg: '50%' }}>
           <Heading
             lineHeight="4rem"
-            color="brand.primary"
+            color="pink.500"
             size={{ base: 'xl', lg: '3xl' }}
           >
             Online Shopping <br /> Made Easy
@@ -34,7 +34,7 @@ export const Banner: React.FC = () => {
               minW="10rem"
               color="white"
               borderRadius="50px"
-              bgColor="brand.primary"
+              bgColor="pink.500"
               _hover={{ bgColor: 'brand.primaryDark' }}
             >
               Shop Now
