@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux'
-import { configureStore, getDefaultMiddleware } from '@reduxjs/toolkit'
+import { configureStore } from '@reduxjs/toolkit'
 import { wishlistReducer, cartReducer } from './slices'
 import { TypedUseSelectorHook, useSelector, useDispatch } from 'react-redux'
 

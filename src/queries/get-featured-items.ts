@@ -1,7 +1,7 @@
 import { groq } from 'next-sanity'
 import { sanityClient } from '@src/utils'
 
-const getFeaturedItemsQuery = `
+export const getFeaturedItemsQuery = `
     *[_type == "featuredProductsAndCategories"]{
         "topCategories": topCategories[]->{
             "id": _id,

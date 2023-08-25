@@ -5,7 +5,7 @@ import { useAppDispatch } from '@src/store'
 import { itemAddedInCollection } from '@src/utils'
 import { BsCart, BsCartX, BsTrash } from 'react-icons/bs'
 import { Button, Grid, GridItem, Image, Text } from '@chakra-ui/react'
-import { addItemToWishlist, removeItemFromWishlist } from '@src/store/slices'
+import { addItemToCart, removeItemFromWishlist } from '@src/store/slices'
 
 export const WishlistItem: React.FC<WishlistItemProps> = ({ item }) => {
   const dispatch = useAppDispatch()
@@ -78,7 +78,7 @@ export const WishlistItem: React.FC<WishlistItemProps> = ({ item }) => {
             borderColor="pink.500"
             color="pink.500"
             title="Add to Cart"
-            onClick={() => dispatch(addItemToWishlist(item))}
+            onClick={() => dispatch(addItemToCart({ ...item, count: 1 }))}
           >
             <BsCart />
           </Button>

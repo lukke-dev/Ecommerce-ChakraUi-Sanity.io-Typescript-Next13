@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'export',
+  pageExtensions: ['page.tsx', 'api.ts', 'api.tsx'],
 }
 
 module.exports = nextConfig

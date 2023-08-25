@@ -1,4 +1,3 @@
-'use client'
 import React from 'react'
 import { useCartHook } from '@src/hooks'
 import { Button } from '@chakra-ui/react'
@@ -40,18 +39,7 @@ export const AddToCartButton: React.FC<AddToCartButtonProps> = ({
           borderRadius="50px"
           color="pink.500"
           borderColor="pink.500"
-          onClick={() =>
-            dispatch(
-              addItemToCart({
-                count,
-                id: product.id,
-                name: product.name,
-                slug: product.slug,
-                price: product.price,
-                mainImage: product.mainImage,
-              }),
-            )
-          }
+          onClick={() => dispatch(addItemToCart({ ...product, count }))}
         >
           Add to cart
         </Button>

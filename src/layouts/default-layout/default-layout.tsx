@@ -1,7 +1,5 @@
-'use client'
-
 import { ReactNode } from 'react'
-import { Navbar } from '@src/components'
+import { Footer, Navbar } from '@src/components'
 
 export const DefaultLayout: React.FC<{ children: ReactNode }> = ({
   children,
@@ -10,7 +8,7 @@ export const DefaultLayout: React.FC<{ children: ReactNode }> = ({
     <>
       <Navbar />
       {children}
-      <footer>footer</footer>
+      <Footer />
     </>
   )
 }
