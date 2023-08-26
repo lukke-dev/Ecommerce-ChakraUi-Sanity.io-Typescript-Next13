@@ -1,11 +1,13 @@
-import Head from 'next/head'
+import { NextSeo } from 'next-seo'
 
 export default function Categories() {
   return (
     <>
-      <Head>
-        <title>LD Shop - Categories</title>
-      </Head>
+      <NextSeo
+        title="LD Shop - Categories"
+        description="We've got all your favorite Categories"
+      />
+
       <h2>Categories</h2>
     </>
   )

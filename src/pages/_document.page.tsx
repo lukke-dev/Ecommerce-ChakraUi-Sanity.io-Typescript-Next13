@@ -4,7 +4,6 @@ export default function Document() {
   return (
     <Html>
       <Head>
-        <meta title="description" content="Buy anything online" />
         <link
           rel="icon"
           type="image/png"

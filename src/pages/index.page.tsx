@@ -1,4 +1,4 @@
-import Head from 'next/head'
+import { NextSeo } from 'next-seo'
 import { GetStaticProps } from 'next'
 import { FeaturedType } from '@src/entities'
 import { getFeaturedItems } from '@src/queries'
@@ -11,9 +11,7 @@ export default function Home({
 }) {
   return (
     <>
-      <Head>
-        <title>LD Shop - Home</title>
-      </Head>
+      <NextSeo title="LD Shop - Home" description="Best Deals For You" />
       <Banner />
       <TopCategories categories={featuredItems.topCategories} />
       <FeaturedProducts

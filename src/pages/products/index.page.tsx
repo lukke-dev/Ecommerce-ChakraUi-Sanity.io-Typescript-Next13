@@ -1,4 +1,4 @@
-import Head from 'next/head'
+import { NextSeo } from 'next-seo'
 import { GetStaticProps } from 'next'
 import { Hero } from '@src/components'
 import { AllProducts } from './components'
@@ -6,14 +6,14 @@ import { ProductType } from '@src/entities'
 import { getAllProducts } from '@src/queries'
 
 export default function Products({ products }: { products: ProductType[] }) {
+  const description =
+    'Affordability, Durability, Fast and Convenient Delivery, Free Shipping and more'
   return (
     <>
-      <Head>
-        <title>LD Shop - Products</title>
-      </Head>
+      <NextSeo title="LD Shop - Products" description={description} />
       <Hero
         heading="Best and Quality Products"
-        description="Affordability, Durability, Fast and Convenient Delivery, Free Shipping and more"
+        description={description}
         imageUrl="/bags.jpg"
         btnLabel="View All Categories"
         btnLink="/categories"
