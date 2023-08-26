@@ -42,7 +42,7 @@ export const Wishlist: React.FC = () => {
               rounded="full"
               justify="center"
               fontSize="0.6rem"
-              bgColor="brand.primaryLight"
+              bgColor="pink.400"
             >
               {wishlistItemsLength}
             </Flex>

@@ -1,11 +1,10 @@
 import Link from 'next/link'
 import { NavbarProps } from 'sanity'
-import { colors } from '@src/config/themes'
 import React, { CSSProperties } from 'react'
 
 const linkStyle: CSSProperties = {
   textDecoration: 'none',
-  color: colors.brand.primary,
+  color: 'var(--chakra-colors-pink-500)',
 }
 
 export const AdminNavbar = (props: NavbarProps) => {

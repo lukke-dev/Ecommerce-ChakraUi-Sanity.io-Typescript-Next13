@@ -1,7 +1,6 @@
 import React from 'react'
 import ReactStars from 'react-stars'
 import { RatingProps } from './types'
-import { colors } from '@src/config/themes'
 import { Flex, Text } from '@chakra-ui/react'
 
 export const Rating: React.FC<RatingProps> = ({ rating }) => {
@@ -13,7 +12,7 @@ export const Rating: React.FC<RatingProps> = ({ rating }) => {
         half={true}
         edit={false}
         value={rating?.rate}
-        color2={colors.brand.primary}
+        color2="var(--chakra-colors-purple-500)"
       />
       <Text fontSize="xs" mx="1">
         ({rating?.count})

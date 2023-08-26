@@ -45,7 +45,7 @@ export const Cart: React.FC = () => {
             align="center"
             justify="center"
             fontSize="0.6rem"
-            bgColor="brand.primaryLight"
+            bgColor="pink.400"
           >
             {cartItemsLength}
           </Flex>

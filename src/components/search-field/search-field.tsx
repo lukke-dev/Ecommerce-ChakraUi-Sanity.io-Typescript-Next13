@@ -56,7 +56,7 @@ export const SearchField: React.FC = () => {
           value={searchText}
           borderColor="gray.400"
           placeholder="Search..."
-          focusBorderColor="brand.primaryLight"
+          focusBorderColor="pink.400"
           onClick={() => setIsModalOpen(true)}
           onChange={(e) => setSearchText(e.target.value)}
         />

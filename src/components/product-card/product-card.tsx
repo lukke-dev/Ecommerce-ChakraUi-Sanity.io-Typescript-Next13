@@ -34,7 +34,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
             <Link href={`/products/${product.slug}`}>
               <Heading size="sm">{getSubstring(product.name, 20)}</Heading>
             </Link>
-            <Flex color="brand.primaryDark" fontWeight="bold">
+            <Flex color="pink.600" fontWeight="bold">
               <Text fontSize="sm">$ </Text>
               <Text fontSize="lg">{product.price}</Text>
             </Flex>

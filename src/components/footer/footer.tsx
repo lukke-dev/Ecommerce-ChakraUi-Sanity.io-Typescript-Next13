@@ -97,7 +97,7 @@ export const Footer: React.FC = () => {
               />
               <IconButton
                 color="white"
-                bg="brand.primary"
+                bg="pink.500"
                 icon={<BiMailSend />}
                 aria-label="Subscribe"
                 _hover={{ bg: 'brand.primaryDark' }}

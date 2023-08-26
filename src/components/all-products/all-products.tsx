@@ -51,8 +51,8 @@ export const AllProducts: React.FC<AllProductsProps> = ({
                 key={range}
                 bgColor="white"
                 borderWidth="1px"
-                color="brand.primary"
-                borderColor="brand.primary"
+                color="pink.500"
+                borderColor="pink.500"
               >
                 ...
               </Button>
@@ -61,7 +61,7 @@ export const AllProducts: React.FC<AllProductsProps> = ({
                 mx="1"
                 key={range}
                 borderWidth="1px"
-                borderColor="brand.primary"
+                borderColor="pink.500"
                 _hover={{ bgColor: 'none' }}
                 _active={{ bgColor: 'none' }}
                 onClick={() => pagination.setPage(range)}
