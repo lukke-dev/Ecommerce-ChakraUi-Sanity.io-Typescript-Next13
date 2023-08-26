@@ -1,9 +1,8 @@
 import { NextSeo } from 'next-seo'
 import { GetStaticProps } from 'next'
-import { Hero } from '@src/components'
-import { AllProducts } from './components'
 import { ProductType } from '@src/entities'
 import { getAllProducts } from '@src/queries'
+import { AllProducts, Hero } from '@src/components'
 
 export default function Products({ products }: { products: ProductType[] }) {
   const description =

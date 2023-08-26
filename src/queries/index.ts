@@ -1,3 +1,6 @@
+export * from './get-products-by-category'
+export * from './get-category-by-slug'
 export * from './get-featured-items'
+export * from './get-all-categories'
 export * from './get-all-products'
 export * from './search-products'
