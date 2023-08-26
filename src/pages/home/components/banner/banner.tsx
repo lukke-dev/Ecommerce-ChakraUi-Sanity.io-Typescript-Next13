@@ -4,10 +4,10 @@ import { Box, Button, Flex, Heading, Text } from '@chakra-ui/react'
 
 export const Banner: React.FC = () => {
   return (
-    <Box minH="600px">
+    <Box>
       <Flex
         gap="2"
-        p="2rem"
+        px="2rem"
         mx="auto"
         align="center"
         justify="center"
@@ -41,10 +41,9 @@ export const Banner: React.FC = () => {
         </Box>
         <Box w={{ base: '100%', lg: '50%' }}>
           <Box
-            my="2rem"
-            w={{ base: '300px', lg: '600px' }}
+            w={{ base: '300px', lg: 'full' }}
             h={{ base: '300px', lg: '500px' }}
-            bg="center / cover no-repeat url(mockup.svg)"
+            bg="center no-repeat url(mockup.svg)"
           />
         </Box>
       </Flex>
