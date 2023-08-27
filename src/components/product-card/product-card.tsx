@@ -8,15 +8,11 @@ import {
   CardBody,
 } from '@chakra-ui/react'
 import Link from 'next/link'
+import { getSubstring } from '@src/utils'
 import { ProductCardProps } from './types'
 import { AddToWishlistButton, Rating, AddToCartButton } from '..'
 
 export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
-  const getSubstring = (text: string, substringEnd: number): string => {
-    return text?.length > substringEnd
-      ? `${text?.substring(0, substringEnd)}...`
-      : text
-  }
   return (
     <Card w="xs" pos="relative" m="0.5rem">
       <AddToWishlistButton product={product} />

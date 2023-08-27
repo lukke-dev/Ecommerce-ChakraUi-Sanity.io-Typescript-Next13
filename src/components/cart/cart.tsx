@@ -79,8 +79,8 @@ export const Cart: React.FC = () => {
                   <Button
                     color="white"
                     bgColor="pink.500"
-                    _hover={{ bgColor: 'brand.primaryLight' }}
-                    _active={{ bgColor: 'brand.primaryLight' }}
+                    _hover={{ bgColor: "pink.400" }}
+                    _active={{ bgColor: "pink.400" }}
                   >
                     Checkout
                   </Button>

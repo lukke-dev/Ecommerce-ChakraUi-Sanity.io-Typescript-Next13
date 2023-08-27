@@ -66,9 +66,9 @@ export const AllProducts: React.FC<AllProductsProps> = ({
                 _active={{ bgColor: 'none' }}
                 onClick={() => pagination.setPage(range)}
                 bgColor={
-                  pagination.active === range ? 'brand.primary' : 'white'
+                  pagination.active === range ? "pink.500" : 'white'
                 }
-                color={pagination.active === range ? 'white' : 'brand.primary'}
+                color={pagination.active === range ? 'white' : "pink.500"}
               >
                 {range}
               </Button>

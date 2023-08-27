@@ -43,7 +43,7 @@ export const NavMenu = () => {
             <Link href="/products">
               <Box
                 p="0.5rem"
-                _hover={{ bgColor: 'brand.primaryLight', color: 'white' }}
+                _hover={{ bgColor: "pink.400", color: 'white' }}
               >
                 All Products
               </Box>
@@ -51,7 +51,7 @@ export const NavMenu = () => {
             <Link href="/categories">
               <Box
                 p="0.5rem"
-                _hover={{ bgColor: 'brand.primaryLight', color: 'white' }}
+                _hover={{ bgColor: "pink.400", color: 'white' }}
               >
                 Categories
               </Box>

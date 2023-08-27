@@ -33,7 +33,7 @@ export const Banner: React.FC = () => {
               color="white"
               borderRadius="50px"
               bgColor="pink.500"
-              _hover={{ bgColor: 'brand.primaryDark' }}
+              _hover={{ bgColor: "pink.600" }}
             >
               Shop Now
             </Button>

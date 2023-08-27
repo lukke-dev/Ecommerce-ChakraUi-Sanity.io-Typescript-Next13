@@ -23,6 +23,7 @@ export const SearchField: React.FC = () => {
     handler: () => {
       setIsModalOpen(false)
       setProducts([])
+      setSearchText('')
     },
   })
 

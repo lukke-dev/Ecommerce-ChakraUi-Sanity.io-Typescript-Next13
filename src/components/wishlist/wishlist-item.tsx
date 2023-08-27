@@ -2,19 +2,13 @@ import Link from 'next/link'
 import { WishlistItemProps } from '.'
 import { useCartHook } from '@src/hooks'
 import { useAppDispatch } from '@src/store'
-import { itemAddedInCollection } from '@src/utils'
 import { BsCart, BsCartX, BsTrash } from 'react-icons/bs'
+import { getSubstring, itemAddedInCollection } from '@src/utils'
 import { Button, Grid, GridItem, Image, Text } from '@chakra-ui/react'
 import { addItemToCart, removeItemFromWishlist } from '@src/store/slices'
 
 export const WishlistItem: React.FC<WishlistItemProps> = ({ item }) => {
   const dispatch = useAppDispatch()
-
-  const getSubstring = (text: string, substringEnd: number): string => {
-    return text?.length > substringEnd
-      ? `${text?.substring(0, substringEnd)}...`
-      : text
-  }
 
   const { cartItems } = useCartHook()
   const isAddedInCart = itemAddedInCollection({

@@ -12,7 +12,7 @@ export const Rating: React.FC<RatingProps> = ({ rating }) => {
         half={true}
         edit={false}
         value={rating?.rate}
-        color2="var(--chakra-colors-purple-500)"
+        color2="var(--chakra-colors-pink-500)"
       />
       <Text fontSize="xs" mx="1">
         ({rating?.count})

@@ -15,8 +15,7 @@ export const CustomBreadcrumb: React.FC<CustomBreadcrumbProps> = ({
     <>
       {items.length > 0 && (
         <Breadcrumb
-          py="2rem"
-          px="1rem"
+          pb="2rem"
           mx="auto"
           spacing="8px"
           w={{ base: '100%', lg: '90%' }}

@@ -5,9 +5,9 @@ type ItemAddedInCollectionProps = {
   collection: CartItem[] | WishlistItem[]
 }
 
-export const itemAddedInCollection: React.FC<ItemAddedInCollectionProps> = ({
+export const itemAddedInCollection = ({
   itemId,
   collection,
-}): boolean => {
+}: ItemAddedInCollectionProps): boolean => {
   return collection.some((item) => item.id === itemId)
 }
