@@ -25,9 +25,6 @@ import { useAppDispatch } from '@src/store'
 import { ProductDetailsProps } from './types'
 import { getSubstring, itemAddedInCollection } from '@src/utils'
 import { addItemToCart, resetCartItems } from '@src/store/slices'
-import { Swiper, SwiperSlide } from 'swiper/react'
-import { Pagination } from 'swiper/modules'
-import 'swiper/css/pagination'
 
 export const ProductDetails: React.FC<ProductDetailsProps> = ({ product }) => {
   const [quantity, setQuantity] = useState(1)
