@@ -6,6 +6,7 @@ const getProductsByCategoryQueries = `
     ...,
     "id": _id,
     "slug": slug.current,
+    description,
     "mainImage": mainImage.asset->url,
     category->{ name, "image": image.asset->url  },
   }
