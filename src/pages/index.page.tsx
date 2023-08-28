@@ -37,6 +37,6 @@ export const getStaticProps: GetStaticProps = async () => {
     props: {
       featuredItems: featuredItems[0],
     },
-    revalidate: 60 * 60 * 10, // 10 hours
+    revalidate: 60 * 60 * 10 * 7 * 10, // 10 weeks
   }
 }
