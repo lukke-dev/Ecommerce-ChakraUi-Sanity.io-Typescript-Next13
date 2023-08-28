@@ -96,11 +96,9 @@ export const Footer: React.FC = () => {
                 _focus={{ bg: 'whiteAlpha.300' }}
               />
               <IconButton
-                color="white"
-                bg="pink.500"
+                colorScheme="pink"
                 icon={<BiMailSend />}
                 aria-label="Subscribe"
-                _hover={{ bg: "pink.600" }}
               />
             </Stack>
           </Stack>

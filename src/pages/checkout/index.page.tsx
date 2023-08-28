@@ -14,6 +14,7 @@ import {
   FormLabel,
   RadioGroup,
   CardHeader,
+  Spacer,
 } from '@chakra-ui/react'
 import { NextSeo } from 'next-seo'
 import { useCartHook } from '@src/hooks'
@@ -172,10 +173,11 @@ export default function Checkout() {
           </Card>
         </Box>
       </Flex>
-      <Text color="pink.500" textAlign="center">
+      <Text color="pink.500" textAlign="center" mt="4">
         *Please use the following test credit card for payments* 4242 4242 4242
         4242 - Exp: 01/24 - CVV: 123
       </Text>
+      <Spacer h={{ base: 0, '2xl': '9' }} />
     </>
   )
 }
