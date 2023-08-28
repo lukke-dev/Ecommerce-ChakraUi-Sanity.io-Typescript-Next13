@@ -41,18 +41,12 @@ export const NavMenu = () => {
 
           <DrawerBody>
             <Link href="/products">
-              <Box
-                p="0.5rem"
-                _hover={{ bgColor: "pink.400", color: 'white' }}
-              >
+              <Box p="0.5rem" _hover={{ bgColor: 'pink.400', color: 'white' }}>
                 All Products
               </Box>
             </Link>
             <Link href="/categories">
-              <Box
-                p="0.5rem"
-                _hover={{ bgColor: "pink.400", color: 'white' }}
-              >
+              <Box p="0.5rem" _hover={{ bgColor: 'pink.400', color: 'white' }}>
                 Categories
               </Box>
             </Link>

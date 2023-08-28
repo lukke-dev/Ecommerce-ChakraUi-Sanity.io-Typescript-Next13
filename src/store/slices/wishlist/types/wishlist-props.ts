@@ -3,6 +3,7 @@ export type WishlistItem = {
   name: string
   price: number
   slug: string
+  description: string
   mainImage: string
 }
 
