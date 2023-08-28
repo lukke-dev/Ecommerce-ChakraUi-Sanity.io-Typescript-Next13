@@ -5,6 +5,7 @@ import {
   BreadcrumbItem,
   BreadcrumbLink,
 } from '@chakra-ui/react'
+import NextLink from 'next/link'
 import { CustomBreadcrumbProps } from './types'
 import { ChevronRightIcon } from '@chakra-ui/icons'
 
@@ -25,7 +26,7 @@ export const CustomBreadcrumb: React.FC<CustomBreadcrumbProps> = ({
           {items.map((item, index) =>
             index !== items.length - 1 ? (
               <BreadcrumbItem key={index}>
-                <BreadcrumbLink href={item.link}>{item.name}</BreadcrumbLink>
+                <NextLink href={item.link}>{item.name}</NextLink>
               </BreadcrumbItem>
             ) : (
               <BreadcrumbItem key={index}>
