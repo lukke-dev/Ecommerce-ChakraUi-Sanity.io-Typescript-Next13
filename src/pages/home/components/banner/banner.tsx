@@ -9,6 +9,7 @@ export const Banner: React.FC = () => {
         gap="2"
         px="2rem"
         mx="auto"
+        pt="2rem"
         align="center"
         justify="center"
         w={{ base: '100%', lg: '90%' }}

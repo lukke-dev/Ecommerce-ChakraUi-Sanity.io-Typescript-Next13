@@ -1,13 +1,14 @@
 import {
-  Box,
   Flex,
   Text,
+  Stack,
   Button,
   Drawer,
   DrawerBody,
   DrawerFooter,
   DrawerHeader,
   DrawerOverlay,
+  useMediaQuery,
   DrawerContent,
   useDisclosure,
   DrawerCloseButton,
@@ -23,6 +24,7 @@ export const Cart: React.FC = () => {
   const dispatch = useAppDispatch()
   const { cartItems, cartItemsLength, cartItemsTotalPrice } = useCartHook()
   const { isOpen, onOpen, onClose } = useDisclosure()
+  const [isLargerThan500] = useMediaQuery('(max-width: 500px)')
 
   return (
     <>
@@ -67,25 +69,20 @@ export const Cart: React.FC = () => {
           </DrawerBody>
           {cartItemsLength !== 0 && (
             <DrawerFooter justifyContent="space-between">
-              <Box>
+              <Stack flexDir={isLargerThan500 ? 'column' : 'row'}>
                 <Button
                   variant="outline"
-                  mr={3}
+                  w={isLargerThan500 ? '90%' : ''}
                   onClick={() => dispatch(resetCartItems())}
                 >
                   Clear Cart
                 </Button>
                 <Link href="/checkout">
-                  <Button
-                    color="white"
-                    bgColor="pink.500"
-                    _hover={{ bgColor: 'pink.400' }}
-                    _active={{ bgColor: 'pink.400' }}
-                  >
+                  <Button colorScheme="pink" w={isLargerThan500 ? '90%' : ''}>
                     Checkout
                   </Button>
                 </Link>
-              </Box>
+              </Stack>
               <Text fontWeight="bold">Total: $ {cartItemsTotalPrice}</Text>
             </DrawerFooter>
           )}

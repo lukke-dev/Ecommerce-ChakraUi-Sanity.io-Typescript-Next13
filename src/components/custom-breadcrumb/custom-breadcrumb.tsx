@@ -1,10 +1,5 @@
 import React from 'react'
-import {
-  Text,
-  Breadcrumb,
-  BreadcrumbItem,
-  BreadcrumbLink,
-} from '@chakra-ui/react'
+import { Text, Breadcrumb, BreadcrumbItem } from '@chakra-ui/react'
 import NextLink from 'next/link'
 import { CustomBreadcrumbProps } from './types'
 import { ChevronRightIcon } from '@chakra-ui/icons'
