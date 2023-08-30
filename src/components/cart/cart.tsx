@@ -78,7 +78,11 @@ export const Cart: React.FC = () => {
                   Clear Cart
                 </Button>
                 <Link href="/checkout">
-                  <Button colorScheme="pink" w={isLargerThan500 ? '90%' : ''}>
+                  <Button
+                    onClick={onClose}
+                    colorScheme="pink"
+                    w={isLargerThan500 ? '90%' : ''}
+                  >
                     Checkout
                   </Button>
                 </Link>

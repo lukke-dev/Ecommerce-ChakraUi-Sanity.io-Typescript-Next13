@@ -35,17 +35,17 @@ export const NavMenu = () => {
         <DrawerContent>
           <DrawerCloseButton />
           <DrawerHeader>
-            <Logo />
+            <Logo onClick={onClose} />
           </DrawerHeader>
           <Divider />
 
           <DrawerBody>
-            <Link href="/products">
+            <Link href="/products" onClick={onClose}>
               <Box p="0.5rem" _hover={{ bgColor: 'pink.400', color: 'white' }}>
                 All Products
               </Box>
             </Link>
-            <Link href="/categories">
+            <Link href="/categories" onClick={onClose}>
               <Box p="0.5rem" _hover={{ bgColor: 'pink.400', color: 'white' }}>
                 Categories
               </Box>
